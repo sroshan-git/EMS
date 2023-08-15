@@ -1,4 +1,5 @@
 ﻿using System;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -12,7 +13,7 @@ namespace EMS.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "AspNetRoles",
+                name: "AspNetRoles", 
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),

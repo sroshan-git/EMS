@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using EMS.Data;
+using EMS.Core.IRepo;
+using EMS.Services.IServices;
+using EMS.Services.Services;
+using EMS.Core.Repo;
 
 namespace EMS
 {
@@ -16,6 +20,8 @@ namespace EMS
                 options.UseSqlServer(connectionString, sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()));
 
             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<EmsDbContext>();
+            builder.Services.AddTransient<IAccountRepo, AccountRepo>();
+            builder.Services.AddTransient<IAccountServices, AccountServices>();
             // Add services to the container.
             builder.Services.AddRazorPages();
 

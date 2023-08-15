@@ -1,0 +1,20 @@
+﻿@page
+@model EMS.Pages.Account.LoginModel
+@{
+}
+<div class="loginBox">
+    <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Sign in here</h3>
+    <form method="Post" asp-page="SignIn">
+        <div class="inputBox">
+            <input id="uname" type="email" name="email" asp-for="@Model.Account.Email" placeholder="Email">
+            <input id="pass" type="password" name="Password" asp-for="@Model.Account.Password" placeholder="Password">
+        </div> <input type="submit" name="" value="Login">
+    </form>
+    <a href="#">Forget Password<br> </a>
+    <div class="text-center">
+        @*  <p style="color: #59238F;">Sign-Up</p>*@
+        <p style="color: #59238F;"><a asp-area="" asp-page="/Account/Register">Sign-Up</a></p>
+    </div>
+
+</div>
